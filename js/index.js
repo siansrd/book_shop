@@ -10,7 +10,7 @@ const createPopUp = (info) => {
   info.innerHTML = '';
   info.classList.add('pop-up');
 
-  const closeButton = createCloseButton();
+  const closeButton = createCloseButton(info);
   info.appendChild(closeButton);
 
   const aboutText = 'Siân Robinson Davies is a writer, performer and teacher living in Edinburgh, Scotland.';
@@ -22,13 +22,12 @@ const createPopUp = (info) => {
   info.appendChild(email);
 }
 
-const createCloseButton = () => {
+const createCloseButton = (info) => {
   const closeButton = document.createElement('button');
   closeButton.textContent = 'X';
   closeButton.id = 'close';
   closeButton.addEventListener('click', () => {
-    info.innerHTML = '';
-    info.classList.remove('pop-up');
+    clearPopUp(info);
   });
   return closeButton;
 }

@@ -10,13 +10,7 @@ const createPopUp = (info) => {
   info.innerHTML = '';
   info.classList.add('pop-up');
 
-  const closeButton = document.createElement('button');
-  closeButton.textContent = 'X';
-  closeButton.id = 'close';
-  closeButton.addEventListener('click', () => {
-    info.innerHTML = '';
-    info.classList.remove('pop-up');
-  });
+  const closeButton = createCloseButton();
   info.appendChild(closeButton);
 
   const infoText = document.createElement('p');
@@ -25,6 +19,17 @@ const createPopUp = (info) => {
   const email = document.createElement('p');
   email.textContent = 'sianrobinsondavies@gmail.com';
   info.appendChild(email);
+}
+
+const createCloseButton = () => {
+  const closeButton = document.createElement('button');
+  closeButton.textContent = 'X';
+  closeButton.id = 'close';
+  closeButton.addEventListener('click', () => {
+    info.innerHTML = '';
+    info.classList.remove('pop-up');
+  });
+  return closeButton;
 }
 
 const clearPopUp = (info) => {

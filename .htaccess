@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://sianrd.com/$1 [R=301,L]
+RewriteRule (.*) https://www.sianrd.com/$1 [R=301,L]

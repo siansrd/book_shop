@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const infoButton = document.querySelector('button#info');
   infoButton.addEventListener('click', () => {
     const infoSection = document.querySelector('section#info');
-    !infoSection.classList.contains('pop-up') ? createPopUp(infoSection) : clearPopUp(infoSection);
+    !infoSection.classList.contains('pop-up')
+      ? createPopUp(infoSection)
+      : clearPopUp(infoSection);
   });
 });
 

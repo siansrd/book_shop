@@ -13,11 +13,12 @@ const createPopUp = (info) => {
   const closeButton = createCloseButton();
   info.appendChild(closeButton);
 
-  const infoText = document.createElement('p');
-  infoText.textContent = 'Siân Robinson Davies is a writer, performer and teacher living in Edinburgh, Scotland.';
-  info.appendChild(infoText);
-  const email = document.createElement('p');
-  email.textContent = 'sianrobinsondavies@gmail.com';
+  const aboutText = 'Siân Robinson Davies is a writer, performer and teacher living in Edinburgh, Scotland.';
+  const about = createParagraph(aboutText);
+  info.appendChild(about);
+
+  const emailText = 'sianrobinsondavies@gmail.com'
+  const email = createParagraph(emailText);
   info.appendChild(email);
 }
 
@@ -30,6 +31,12 @@ const createCloseButton = () => {
     info.classList.remove('pop-up');
   });
   return closeButton;
+}
+
+const createParagraph = (content) => {
+  const paragraph = document.createElement('p');
+  paragraph.textContent = content;
+  return paragraph;
 }
 
 const clearPopUp = (info) => {

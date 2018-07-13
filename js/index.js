@@ -6,8 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!info.classList.contains('pop-up')) {
       createPopUp(info);
     } else {
-      info.innerHTML = '';
-      info.classList.remove('pop-up');
+      clearPopUp(info);
     }
   });
 });
@@ -31,4 +30,9 @@ const createPopUp = (info) => {
   const email = document.createElement('p');
   email.textContent = 'sianrobinsondavies@gmail.com';
   info.appendChild(email);
+}
+
+const clearPopUp = (info) => {
+  info.innerHTML = '';
+  info.classList.remove('pop-up');
 }
